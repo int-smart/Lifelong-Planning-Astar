@@ -61,7 +61,7 @@ def getSuccessors(indState):
     return possibleStates
 
 def computeShortestPath(U):
-    while (U[0][1]<CalculateKey(State.goalState) or State.goalState._rhsValue) != State.goalState._gValue:
+    while (U[0][1]<CalculateKey(State.goalState) or State.goalState._rhsValue != State.goalState._gValue:
         u = U.pop(0)[0]
         if u._gValue > u._rhsValue:
             u._gValue = u._rhsValue
@@ -80,3 +80,4 @@ def LPAPlanner(startConfig, goalConfig, env, robot, heuristic, connectionType, s
         changes = input("Make changes in edge cost")
         for change in changes:
             updateVertex(change[v], openList)
+
